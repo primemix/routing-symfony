@@ -1,4 +1,2 @@
-<?php
-
-$input = $request->get('name', 'GeekHub!');
-$response->setContent(sprintf('Hello %s', htmlspecialchars($input, ENT_QUOTES, 'UTF-8')));
+<!-- example.com/src/pages/index.php -->
+Hello <?php echo htmlspecialchars(isset($name) ? $name : 'GeekHub', ENT_QUOTES, 'UTF-8') ?>
