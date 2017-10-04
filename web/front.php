@@ -26,7 +26,7 @@ try {
     $response = new Response ('An error occured', 500);
 }
 
-//!!!!
+/* all routes dump */
 //$dumper = new Routing\Matcher\Dumper\PhpMatcherDumper($routes);
 //echo '<pre>';
 //echo $dumper->dump();
