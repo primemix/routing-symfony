@@ -6,9 +6,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Calendar\Model\LeapYear;
 
+/**
+ * Class LeapYearController
+ * @package Calendar\Controller
+ */
 class LeapYearController
 {
-    public function indexAction(Request $request, $year)
+    /**
+     * @param Request $request
+     * @param $year
+     * @return Response
+     */
+    public function indexAction(Request $request, $year) : Response
     {
         $leapyear = new LeapYear();
         if ($leapyear->isLeapYear($year)) {

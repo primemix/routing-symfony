@@ -19,6 +19,7 @@ $controllerResolver = new ControllerResolver();
 $argumentResolver = new ArgumentResolver();
 
 $framework = new Simplex\Framework($matcher, $controllerResolver, $argumentResolver);
+
 $response = $framework->handle($request);
 
 $response->send();

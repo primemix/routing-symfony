@@ -8,18 +8,30 @@ use Hello\Model\Hello;
 
 class HelloController
 {
-
-    public function homeAction(Request $request)
+    /**
+     * @param Request $request
+     * @return Response
+     */
+    public function homeAction(Request $request): Response
     {
         return new Response('Home Page');
     }
 
-    public function indexAction(Request $request, $name)
+    /**
+     * @param Request $request
+     * @param string $name
+     * @return Response
+     */
+    public function indexAction(Request $request, $name): Response
     {
-        $isName = new Hello();
-        if ($name == '') {
-            return new Response($isName->getHello());
+        if ( ! $name) {
+            $hello = new Hello($name = 'GeekHub!');
+
+            return new Response($hello->getHello());
         }
-        return new Response($isName->getHello($name));
+
+        $hello = new Hello($name);
+
+        return new Response($hello->getHello());
     }
 }
