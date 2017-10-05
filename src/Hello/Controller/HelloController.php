@@ -24,14 +24,8 @@ class HelloController
      */
     public function indexAction(Request $request, $name): Response
     {
-        if ( ! $name) {
-            $hello = new Hello($name = 'GeekHub!');
+        $hello = new Hello();
 
-            return new Response($hello->getHello());
-        }
-
-        $hello = new Hello($name);
-
-        return new Response($hello->getHello());
+        return new Response($hello->helloName($name));
     }
 }

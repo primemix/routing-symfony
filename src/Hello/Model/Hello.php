@@ -9,25 +9,15 @@ namespace Hello\Model;
 class Hello
 {
     /**
-     * @var string $name
-     */
-    protected $name;
-
-    /**
-     * Hello constructor.
-     * @param string $name
-     */
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
-    
-    /**
-     * @param string $name
+     * @param null $name
      * @return string
      */
-    public function getHello(): string
+    public function helloName($name = null): string
     {
-        return 'Hello ' . $this->name;
+        if (null == $name) {
+            $name = 'GeekHub!';
+        }
+        
+        return 'Hello ' . $name;
     }
 }
