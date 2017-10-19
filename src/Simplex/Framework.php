@@ -9,6 +9,9 @@ use Symfony\Component\HttpKernel\Controller\ControllerResolver;
 use Symfony\Component\HttpKernel\Tests\Controller;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
+use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
+use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
+use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 
 /**
  * Class Framework
@@ -16,28 +19,10 @@ use Symfony\Component\Routing\Matcher\UrlMatcher;
  */
 class Framework
 {
-    /**
-     * @var UrlMatcher
-     */
     protected $matcher;
-    
-    /**
-     * @var ControllerResolver
-     */
     protected $controllerResolver;
-
-    /**
-     * @var ArgumentResolver
-     */
     protected $argumentResolver;
-
-    /**
-     * Framework constructor.
-     * @param UrlMatcher $matcher
-     * @param ControllerResolver $controllerResolver
-     * @param ArgumentResolver $argumentResolver
-     */
-    public function __construct(UrlMatcher $matcher, ControllerResolver $controllerResolver, ArgumentResolver $argumentResolver)
+    public function __construct(UrlMatcherInterface $matcher, ControllerResolverInterface $controllerResolver, ArgumentResolverInterface $argumentResolver)
     {
         $this->matcher = $matcher;
         $this->controllerResolver = $controllerResolver;
