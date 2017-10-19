@@ -17,7 +17,7 @@ class LeapYearController
      * @param $year
      * @return Response
      */
-    public function indexAction(Request $request, $year) : Response
+    public function indexAction(Request $request, $year): Response
     {
         $leapyear = new LeapYear();
         if ($leapyear->isLeapYear($year)) {

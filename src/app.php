@@ -19,5 +19,10 @@ $routes->add('hello', new Routing\Route('/hello/{name}', array(
     '_controller' => 'Hello\Controller\HelloController::indexAction',
 )));
 
+$routes->add('user', new Routing\Route('/user/{name}', array(
+    'home' => null,
+    '_controller' => 'User\Controller\UserController::indexAction',
+)));
+
 
 return $routes;

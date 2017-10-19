@@ -6,6 +6,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Hello\Model\Hello;
 
+/**
+ * Class HelloController
+ * @package Hello\Controller
+ */
 class HelloController
 {
     /**

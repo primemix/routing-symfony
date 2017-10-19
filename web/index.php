@@ -1,5 +1,5 @@
 <?php
-
+//echo phpinfo();die;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\HttpFoundation\Request;

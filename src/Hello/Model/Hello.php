@@ -12,12 +12,12 @@ class Hello
      * @param null $name
      * @return string
      */
-    public function helloName($name = null): string
+    public function helloName(string $name): string
     {
-        if (null == $name) {
+        if (empty($name)) {
             $name = 'GeekHub!';
         }
-        
+
         return 'Hello ' . $name;
     }
 }
